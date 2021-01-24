@@ -4,7 +4,7 @@
 Displays NBA scores for the day on an LED board. Driven by a raspberry pi and currently only supports 32x64 boards.
 
 ### Current Functionality
-Scrolls through all NBA games for the day. New days begin on the first update after 12pm ET. Game odds are taken from Bovada and are updated until the game starts. Live game odds are not displayed, although this can be easily changed if desired. All game times are displaye as Eastern times (sorry this is what the CDN returns and I live in this time zone)>
+Scrolls through all NBA games for the day. New days begin on the first update after 12pm ET. Game odds are taken from Bovada and are updated until the game starts. Live game odds are not displayed, although this can be easily changed if desired. All game times are displayed as Eastern times (sorry this is what the CDN returns and I live in this time zone).
 
 ### Game Data
 Game data is pulled from the NBA's CDN link. This link provides live game data for all games of the current day. The link returns data in JSON format. During live games, game data is updated every 2 minutes. Currently there is no documnetation on what other data could be provided by the CDN. I just happened to stumble upon the link while looking at the NBA's official website.
@@ -41,3 +41,9 @@ Scroll down past the commented out section, and insert the following entries:
 ```0 */2 * * * sudo python3 /home/pi/NBA-led-scoreboard/Spreads_Update.py```
 
 This will ensure NBAData and NBA_Render are run at reboot, spreads are updated every two hours and spreads for the new day are updated at 11:00am.
+
+### Copyright
+Be sure to read the terms of use section on the NBA's website. From what I understand, using this data is fine as long as it's not for commercial use.
+
+### Licensing
+This project uses the GNU Public License. If you intend to sell these, the code must remain open source.
