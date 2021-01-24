@@ -15,6 +15,8 @@ Three scripts are used to drive the board:
 
 `sudo python3 /home/pi/NBA-led-scoreboard/NBA_Data.py`
 
+
+
 2. Two scripts are used to update game odds.
 
 `sudo python3 /home/pi/NBA-led-scoreboard/Spreads_New_Day.py`
@@ -23,9 +25,13 @@ and
 
 `sudo python3 /home/pi/NBA-led-scoreboard/Spreads_Update.py`
 
+
+
 3. NBA_Render is used to render the games.
 
 `sudo python3 /home/pi/NBA-led-scoreboard/NBA_Render.py`
+
+
 
 The best way I have found to run all three is scheduling their use using crontab. To do this, execute the following command in a terminal window:
 
