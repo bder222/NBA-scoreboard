@@ -1,13 +1,34 @@
 # NBA-scoreboard
+
 ## NBA LED Scoreboard
 Displays NBA scores for the day on an LED board. Driven by a raspberry pi and currently only supports 32x64 boards.
 
 ### Current Functionality
-Scrolls through all NBA games for the day. New days begin on the first update after 12pm ET.
+Scrolls through all NBA games for the day. New days begin on the first update after 12pm ET. Game odds are taken from Bovada and are updated until the game starts. Live game odds are not displayed, although this can be easily changed if desired. All game times are displaye as Eastern times (sorry this is what the CDN returns and I live in this time zone)>
 
 ### Game Data
-Game data is pulled from the NBA's CDN link. This link provides live game data for all games of the current day. The link returns data in JSON format. During live games, game data is updated every 2 minutes. 
+Game data is pulled from the NBA's CDN link. This link provides live game data for all games of the current day. The link returns data in JSON format. During live games, game data is updated every 2 minutes. Currently there is no documnetation on what other data could be provided by the CDN. I just happened to stumble upon the link while looking at the NBA's official website.
 
 ### Usage
+Three scripts are used to drive the board:
+1. NBAData is used to update game statuses.
+`sudo python3 /home/pi/NBA-led-scoreboard/NBA_Data.py`
+2. Two scripts are used to update game odds.
+`/home/pi/NBA-led-scoreboard/Spreads_New_Day.py`
+and 
+`/home/pi/NBA-led-scoreboard/Spreads_Update.py`
+3. NBA_Render is used to render the games.
+`/home/pi/NBA-led-scoreboard/NBA_Render.py`
+
+The best way I have found to run all three is scheduling their use using crontab. To do this, execute the following command in a terminal window:
 
 `sudo crontab -e`
+
+Scroll down past the commented out section, and insert the following entries:
+
+`@reboot sleep 20; sudo python3 /home/pi/NBA-led-scoreboard/NBA_Data.py >> /home/pi/Docum$
+@reboot sleep 20; sudo python3 /home/pi/NBA-led-scoreboard/NBA_Render.py
+0 11 * * * sudo python3 /home/pi/NBA-led-scoreboard/Spreads_New_Day.py
+0 */2 * * * sudo python3 /home/pi/NBA-led-scoreboard/Spreads_Update.py`
+
+This will ensure NBAData and NBA_Render are run at reboot, spreads are updated every two hours and spreads for the new day are updated at 11:00am.
