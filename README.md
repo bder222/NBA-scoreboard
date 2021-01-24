@@ -17,11 +17,11 @@ Three scripts are used to drive the board:
 
 2. Two scripts are used to update game odds.
 
-`/home/pi/NBA-led-scoreboard/Spreads_New_Day.py`
+`sudo python3 /home/pi/NBA-led-scoreboard/Spreads_New_Day.py`
 
 and 
 
-`/home/pi/NBA-led-scoreboard/Spreads_Update.py`
+`sudo python3 /home/pi/NBA-led-scoreboard/Spreads_Update.py`
 
 3. NBA_Render is used to render the games.
 `/home/pi/NBA-led-scoreboard/NBA_Render.py`
