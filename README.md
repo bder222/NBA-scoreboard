@@ -32,9 +32,9 @@ The best way I have found to run all three is scheduling their use using crontab
 
 Scroll down past the commented out section, and insert the following entries:
 
-`@reboot sleep 20; sudo python3 /home/pi/NBA-led-scoreboard/NBA_Data.py'
-'@reboot sleep 20; sudo python3 /home/pi/NBA-led-scoreboard/NBA_Render.py'
-'0 11 * * * sudo python3 /home/pi/NBA-led-scoreboard/Spreads_New_Day.py'
-'0 */2 * * * sudo python3 /home/pi/NBA-led-scoreboard/Spreads_Update.py`
+`@reboot sleep 20; sudo python3 /home/pi/NBA-led-scoreboard/NBA_Data.py`
+`@reboot sleep 20; sudo python3 /home/pi/NBA-led-scoreboard/NBA_Render.py`
+`0 11 * * * sudo python3 /home/pi/NBA-led-scoreboard/Spreads_New_Day.py`
+`0 */2 * * * sudo python3 /home/pi/NBA-led-scoreboard/Spreads_Update.py`
 
 This will ensure NBAData and NBA_Render are run at reboot, spreads are updated every two hours and spreads for the new day are updated at 11:00am.
