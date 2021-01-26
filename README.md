@@ -2,7 +2,7 @@
 
 ## NBA LED Scoreboard
 Displays NBA scores for the day on an LED board. Driven by a raspberry pi and currently only supports 32x64 boards.
-![Live Game](Game_upcoming.jpg) ![Live Game](Game_Upcoming_v2.jpg)
+![Live Game](Game_upcoming.jpg | width=10) ![Live Game](Game_Upcoming_v2.jpg)
 
 
 ### Hardware
