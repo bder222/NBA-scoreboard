@@ -5,6 +5,9 @@ Displays NBA scores for the day on an LED board. Driven by a raspberry pi and cu
 
 ![Live Game](Game_upcoming.jpg) ![Live Game](Game_Upcoming_v2.jpg)
 
+### Issues
+This is the first time I've shared a project so I'm sure there will be issues that you may encounter. Feel free to open a pull request or create an issue with any problems you have.
+
 
 ### Hardware
 Currently setup for raspberry pi 3b+ and adafruit hat/bonnet. [The RGB Matrix library used](https://github.com/hzeller/rpi-rgb-led-matrix) has a good overview for adjusting matrix settings for filckering and other hardware options.
