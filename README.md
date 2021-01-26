@@ -4,7 +4,7 @@
 Displays NBA scores for the day on an LED board. Driven by a raspberry pi and currently only supports 32x64 boards.
 
 ### Hardware
-Currently setup for raspberry pi 3b+ and adafruit hat/bonnet. [The RGB library used][https://github.com/hzeller/rpi-rgb-led-matrix] has a good overview for adjusting matrix settings for filckering and other hardware options.
+Currently setup for raspberry pi 3b+ and adafruit hat/bonnet. [The RGB library used](https://github.com/hzeller/rpi-rgb-led-matrix) has a good overview for adjusting matrix settings for filckering and other hardware options.
 
 ### Current Functionality
 Scrolls through all NBA games for the day. New days begin on the first update after 12pm ET. Game odds are taken from Bovada and are updated until the game starts. Live game odds are not displayed, although this can be easily changed if desired. All game times are displayed as Eastern times (sorry this is what the CDN returns and I live in this time zone).
