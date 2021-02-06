@@ -5,7 +5,7 @@ import datetime as dt
 
 class NBA_Spreads:
     def __init__(self):
-        self.path = '/home/pi/NBA-led-Scoreboard/NBASpreads.json'
+        self.path = '/home/pi/NBA-scoreboard/NBASpreads.json'
         
     def New_Day(self):
         url = 'https://www.bovada.lv/services/sports/event/v2/events/A/description/basketball/nba'
