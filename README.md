@@ -21,53 +21,53 @@ Game data is pulled from the NBA's CDN link. This link provides live game data f
 ### Installation
 Clone the repo using the following command:
 
-    `git clone https://github.com/bder222/NBA-scoreboard`
+        git clone https://github.com/bder222/NBA-scoreboard
 
 Then cd into the root directory:
 
-    `cd /home/pi/NBA-scoreboard`
+        cd /home/pi/NBA-scoreboard
 
 Then run the install script:
 
-    `sudo ./install.sh`
+        sudo ./install.sh
 
 ### Usage
 Three scripts are used to drive the board:
 1. NBAData is used to update game statuses.
 
-    `sudo python3 /home/pi/NBA-scoreboard/NBA_Data.py`
+        sudo python3 /home/pi/NBA-scoreboard/NBA_Data.py
 
 
 
 2. Two scripts are used to update game odds.
 
-    `sudo python3 /home/pi/NBA-scoreboard/Spreads_New_Day.py`
+        sudo python3 /home/pi/NBA-scoreboard/Spreads_New_Day.py
 
 and 
 
-    `sudo python3 /home/pi/NBA-scoreboard/Spreads_Update.py`
+        sudo python3 /home/pi/NBA-scoreboard/Spreads_Update.py
 
 
 
 3. NBA_Render is used to render the games.
 
-    `sudo python3 /home/pi/NBA-scoreboard/NBA_Render.py`
+        sudo python3 /home/pi/NBA-scoreboard/NBA_Render.py
 
 
 
 The best way I have found to run all three is scheduling their use using crontab. To do this, execute the following command in a terminal window:
 
-  `sudo crontab -e`
+        sudo crontab -e
 
 Scroll down past the commented out section, and insert the following entries:
 
-    `@reboot sleep 20; sudo python3 /home/pi/NBA-scoreboard/NBA_Data.py`
+        @reboot sleep 20; sudo python3 /home/pi/NBA-scoreboard/NBA_Data.py
 
-    `@reboot sleep 20; sudo python3 /home/pi/NBA-scoreboard/NBA_Render.py`
+        @reboot sleep 20; sudo python3 /home/pi/NBA-scoreboard/NBA_Render.py
 
-    `0 11 * * * sudo python3 /home/pi/NBA-scoreboard/Spreads_New_Day.py`
+        0 11 * * * sudo python3 /home/pi/NBA-scoreboard/Spreads_New_Day.py
 
-    `0 */2 * * * sudo python3 /home/pi/NBA-scoreboard/Spreads_Update.py`
+        0 */2 * * * sudo python3 /home/pi/NBA-scoreboard/Spreads_Update.py
 
 This will ensure NBAData and NBA_Render are run at reboot, spreads are updated every two hours and spreads for the new day are updated at 11:00am.
 
