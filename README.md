@@ -71,6 +71,9 @@ Scroll down past the commented out section, and insert the following entries:
 
 This will ensure NBAData and NBA_Render are run at reboot, spreads are updated every two hours and spreads for the new day are updated at 11:00am.
 
+### Live Game Odds
+Live game odds can be updated and displayed throughout live games by toggling `disp_live_odds` in line 29 of NBA_Render.py. After the game is over, pre-game odds will be displayed. I am hoping to make a config file for features this in the future.
+
 ### Copyright
 Be sure to read the terms of use section on the NBA's website. From what I understand, using this data is fine as long as it's not for commercial use.
 
