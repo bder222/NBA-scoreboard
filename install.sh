@@ -1,5 +1,7 @@
 git clone https://github.com/hzeller/rpi-rgb-led-matrix.git
 
+sudo pip install bs4
+
 cd
 cd /home/pi/rpi-rgb-led-matrix
 
