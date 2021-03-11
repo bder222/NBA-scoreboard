@@ -27,8 +27,9 @@ Then cd into the root directory:
 
         cd /home/pi/NBA-scoreboard
 
-Then run the install script:
+Then make the script executable and run the install script:
 
+        sudo chmod 775 install.sh
         sudo ./install.sh
 
 ### Usage
