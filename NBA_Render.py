@@ -98,7 +98,7 @@ class Render:
                 graphics.DrawText(canvas, self.font, 1, 27, graphics.Color(100, 100, 100), game['gameStatusText'])
             else:
                 if game['gameStatusText'] != 'PPD':
-                    graphics.DrawText(canvas, self.font, 1, 27, graphics.Color(100, 100, 100), game['gameStatusText'][0:len(game['gameStatusText']) - 3])
+                    graphics.DrawText(canvas, self.font, 1, 27, graphics.Color(100, 100, 100), game['gameStatusText'][0:game['gameStatusText'].find('ET')])
                 if game['gameStatusText'] == 'PPD':
                     graphics.DrawText(canvas, self.font, 1, 27, graphics.Color(100, 100, 100), 'Postponed')
             canvas = matrix.SwapOnVSync(canvas)
