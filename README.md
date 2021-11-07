@@ -15,6 +15,8 @@ Currently setup for raspberry pi 3b+ and adafruit hat/bonnet. [The RGB Matrix li
 ### Current Functionality
 Scrolls through all NBA games for the day. New days begin on the first update after 12pm ET. Game odds are taken from Bovada and are updated until the game starts. Live game odds are not displayed, although this can be easily changed if desired. All game times are displayed as Eastern times (sorry this is what the CDN returns and I live in this time zone).
 
+Also displays current conference standings when there isn't a live game. Live standings are updated after any game ends.
+
 ### Game Data
 Game data is pulled from the NBA's CDN link. This link provides live game data for all games of the current day. The link returns data in JSON format. During live games, game data is updated every 2 minutes. Currently there is no documnetation on what other data could be provided by the CDN. I just happened to stumble upon the link while looking at the NBA's official website.
 
