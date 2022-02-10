@@ -5,6 +5,7 @@ import datetime as dt
 import time
 import sys
 from NBA_Standings import NBA_Standings
+from dateutil import tz
 
 class Render:
     def __init__(self):
@@ -106,7 +107,12 @@ class Render:
                 graphics.DrawText(canvas, self.font, 1, 27, graphics.Color(100, 100, 100), game['gameStatusText'])
             else:
                 if game['gameStatusText'] != 'PPD':
-                    graphics.DrawText(canvas, self.font, 1, 27, graphics.Color(100, 100, 100), game['gameStatusText'][0:game['gameStatusText'].find('ET')])
+                    from_zone = tz.tzutc()
+                    to_zone = tz.tzlocal()
+                    game_time_utc = dt.datetime.strptime(game['gameTimeUTC'], '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=from_zone)
+                    game_time_local = game_time_utc.astimezone(to_zone).strftime('%I:%M %p')
+                    #graphics.DrawText(canvas, self.font, 1, 27, graphics.Color(100, 100, 100), game['gameStatusText'][0:game['gameStatusText'].find('ET')])
+                    graphics.DrawText(canvas, self.font, 1, 27, graphics.Color(100, 100, 100), game_time_local)
                 if game['gameStatusText'] == 'PPD':
                     graphics.DrawText(canvas, self.font, 1, 27, graphics.Color(100, 100, 100), 'Postponed')
             canvas = matrix.SwapOnVSync(canvas)
@@ -171,3 +177,4 @@ if __name__=='__main__':
         live_prev = live + 0 
         
 #/basketball/nba/new-orleans-pelicans-los-angeles-clippers-20210113
+
