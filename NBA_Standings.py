@@ -42,6 +42,8 @@ class NBA_Standings:
             with open(self.path, 'w') as file:
                 json.dump(standings, file)
         return standings
-
+#NBA Playoffs API URL
+#https://stats.nba.com/stats/playoffbracket?LeagueID=00&SeasonYear=2021&State=2
+    
 if __name__ == '__main__':
     stack = NBA_Standings().Standings()
